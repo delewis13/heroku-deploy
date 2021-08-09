@@ -75,7 +75,7 @@ const deploy = ({
   const force = !dontuseforce ? "--force" : "";
   if (usedocker) {
     execSync(
-      `heroku container:push ${dockerHerokuProcessType} --app ${app_name} ${dockerBuildArgs}`,
+      `heroku container:push ${dockerHerokuProcessType} --app ${app_name} --recursive ${dockerBuildArgs}`,
       appdir ? { cwd: appdir } : null
     );
     execSync(
